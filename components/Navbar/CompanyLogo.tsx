@@ -3,7 +3,7 @@ import Image from "next/image";
 const imgSrc = "/assets/company_log.png";
 const CompanyLogo = () => {
   return (
-    <div className="basis-1/3">
+    <div id="company-logo" className="basis-1/3">
       <Image
         src={imgSrc}
         height={100}

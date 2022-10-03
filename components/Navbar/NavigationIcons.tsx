@@ -6,8 +6,8 @@ import UserIcon from "../assets/icons/UserIcon";
 
 const NavigationIcons = () => {
   return (
-    <div className="flex gap-10">
-      <div className="flex gap-8 items-baseline">
+    <div id="nav-right-container" className="flex gap-10">
+      <div id="icon-container" className="flex gap-8 items-baseline">
         <BookMarkIcon />
         <BellIcon />
         <MailIcon />
