@@ -35,7 +35,7 @@ const MapHolder = () => {
   );
   return (
     <div className="h-[760px] p-24 relative">
-      <ViewChanger handleChange={setViewHandler} />
+      <ViewChanger currentView={viewHandler} handleChange={setViewHandler} />
       <Map
         initialViewState={{
           latitude: 39.7618,
