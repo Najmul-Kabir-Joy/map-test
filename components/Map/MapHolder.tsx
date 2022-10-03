@@ -51,7 +51,6 @@ const MapHolder = ({ cities }: { cities: PopupInfo[] }) => {
       ...viewState,
       latitude: latitude,
       longitude: longitude,
-      zoom: 5,
     });
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [quickAccessKey]);
@@ -60,14 +59,14 @@ const MapHolder = ({ cities }: { cities: PopupInfo[] }) => {
     <div className="h-[760px] p-24 relative">
       <ViewChanger currentView={viewHandler} handleChange={setViewHandler} />
       <Map
-        // initialViewState={{
-        //   latitude: latitude,
-        //   longitude: longitude,
-        //   zoom: 4,
-        //   bearing: 0,
-        //   pitch: 0,
-        // }}
-        {...viewState}
+        initialViewState={{
+          latitude: viewState.latitude,
+          longitude: viewState.longitude,
+          zoom: viewState.zoom,
+          bearing: 0,
+          pitch: 0,
+        }}
+        // {...viewState}
         mapStyle={`mapbox://styles/mapbox/${viewHandler}`}
         mapboxAccessToken={
           "pk.eyJ1IjoibmFqbXVsMTc4IiwiYSI6ImNsOHJicW04ZjBtMDAzbnVrdWU1czdzaXUifQ.nsrIfmqbdmc_kzjeXd4AxQ"
