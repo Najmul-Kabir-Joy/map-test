@@ -6,7 +6,7 @@ import { PopupInfo } from "../../types/types";
 import MapPopup from "./MapPopup";
 import Pin from "./Pin";
 import ViewChanger from "./ViewChanger";
-const MapHolder = () => {
+const MapHolder = ({ cities }: { cities: PopupInfo[] }) => {
   const { searchKey, quickAccessKey } = useMapSearch((state) => state);
   const [popupInfo, setPopupInfo] = useState<PopupInfo | null>(null);
   const [showPopup, setShowPopup] = useState<boolean>(false);
@@ -16,12 +16,7 @@ const MapHolder = () => {
     latitude: 40,
     zoom: 4,
   });
-  const [cities, setCities] = useState<PopupInfo[]>([]);
-  useEffect(() => {
-    fetch("./cities.json")
-      .then((res) => res.json())
-      .then((data) => setCities(data));
-  }, []);
+
   const pins = useMemo(
     () =>
       cities
