@@ -1,9 +1,13 @@
 import React, { useState } from "react";
+import { useMapSearch } from "../../store/MapStore";
 import SearchIcon from "../assets/icons/SearchIcon";
 import QuickAccess from "./QuickAccess";
 const SearchField = () => {
+  const { setSearchKey } = useMapSearch((state) => state);
   const [searchValue, setSearchValue] = useState<string>("");
-  const handleSearchClick = () => {};
+  const handleSearchClick = () => {
+    setSearchKey(searchValue);
+  };
   return (
     <div
       id="nav-middle-container"

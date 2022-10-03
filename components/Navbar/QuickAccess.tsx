@@ -6,24 +6,19 @@ import {
   Select,
   SelectChangeEvent,
 } from "@mui/material";
+import { useMapSearch } from "../../store/MapStore";
 
 const QuickAccess = () => {
-  const [item, setItem] = React.useState("California");
+  const { quickAccessKey, setQuickAccessKey } = useMapSearch((state) => state);
+  const [item, setItem] = React.useState(quickAccessKey);
 
   const handleChange = (e: SelectChangeEvent) => {
     const newItem = e.target.value;
     setItem(newItem);
+    setQuickAccessKey(newItem);
   };
 
-  const menuList = [
-    "California",
-    "New York",
-    "Illinois",
-    "Texas",
-    "Arizona",
-    "Ohio",
-    "California",
-  ];
+  const menuList = ["California", "New York", "Illinois", "Texas", "Arizona"];
   return (
     <FormControl sx={{ m: 1, minWidth: 120 }} size="small">
       <InputLabel id="demo-select-small" size="small">
