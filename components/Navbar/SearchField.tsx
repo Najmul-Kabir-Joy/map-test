@@ -23,7 +23,7 @@ const SearchField = () => {
           setSearchValue(input);
         }}
         autoComplete={"off"}
-        placeholder="Search love questions and answers"
+        placeholder="Search city or state"
         className="h-full indent-4 w-[427px] border border-[#D6D5D5] focus:outline-[#D6D5D5] hover:border-[#D6D5D5] placeholder:italic"
       />
       <div
